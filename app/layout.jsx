@@ -1,7 +1,6 @@
 import '@/styles/globals.css';
 
 import Nav from '@/components/Nav';
-import Provider from '@/components/Provider';
 import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
@@ -13,13 +12,13 @@ const RootLayout = ({ children }) => {
   return (
     <html lang='en' className='scroll-smooth'>
       <body>
-        <Provider>
+        <>
           <Toaster />
           <main className='app'>
             <Nav />
             {children}
           </main>
-        </Provider>
+        </>
       </body>
     </html>
   );
