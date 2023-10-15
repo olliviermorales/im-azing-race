@@ -1,3 +1,6 @@
+import { connectToDB } from '@/utils/database';
+import Users from '@/models/user';
+
 export const GET = async (req) => {
   try {
     await connectToDB();
