@@ -32,7 +32,7 @@ const Teams = () => {
 
         if (response.ok) {
           // User deleted successfully, close the modal, update UI, etc.
-          const updatedResponse = await fetch(`/api/users`);
+          const updatedResponse = await fetch(`/api/users/getAll`);
           const updatedData = await updatedResponse.json();
           setUsers(updatedData);
           setShowDeleteModal(false);
@@ -68,7 +68,7 @@ const Teams = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const response = await fetch(`/api/users`);
+      const response = await fetch(`/api/users/getAll`);
       const data = await response.json();
       setUsers(data);
     };
