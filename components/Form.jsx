@@ -64,6 +64,16 @@ const Form = () => {
 
   return (
     <section className='bg-primary-blue max-w-full my-auto w-full flex'>
+      <div className='w-1/2'>
+        <Image
+          src={'/assets/images/image 3.jpg'}
+          alt='Promptopia Logo'
+          className='object-contain'
+          width='1500'
+          height='1500'
+          quality='100'
+        />
+      </div>
       <div className='w-1/2 px-32 space-y-6 flex justify-center flex-col'>
         <p className=' uppercase text-start w-full text-white text-5xl font-bold tracking-widest'>
           Let's Race!
@@ -210,16 +220,6 @@ const Form = () => {
             quality='100'
           />
         </div>
-      </div>
-      <div className='w-1/2'>
-        <Image
-          src={'/assets/images/image 3.jpg'}
-          alt='Promptopia Logo'
-          className='object-contain'
-          width='1500'
-          height='1500'
-          quality='100'
-        />
       </div>
     </section>
   );
