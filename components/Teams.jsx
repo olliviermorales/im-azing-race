@@ -78,104 +78,94 @@ const Teams = () => {
 
   return (
     <section
-      className='min-h-screen bg-cover bg-no-repeat bg-center p-16 flex flex-col'
-      style={{ backgroundImage: 'url("/assets/images/teams.png")' }}
+      className='min-h-screen bg-cover bg-no-repeat bg-center p-4 sm:p-8 md:p-16 flex flex-col'
+      style={{ backgroundImage: 'url("/assets/images/teams-green.png")' }}
     >
       <div className='justify-center w-full'>
-        <p className='text-center uppercase text-6xl text-white font-black mb-6'>
+        <p className='text-center uppercase text-4xl sm:text-5xl md:text-6xl text-white font-black mb-6'>
           meet the teams
         </p>
       </div>
-      <div className='bg-gradient-to-b from-primary-blue/[.5] to-yellow-500/[.5] opacity-0.1 flex flex-col'>
-        <div className='grid grid-cols-6 gap-20 pt-16 px-16'>
+      <div className='bg-gradient-to-b from-primary-green/[.5] to-yellow-500/[.5] opacity-0.1 flex flex-col'>
+        <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-8 md:gap-20 pt-8 px-4 sm:px-8 md:px-16'>
           {hospitals.slice(0, 6).map((hospital, index) => {
             const hospitalUsers = users.filter(
               (user) => user.hospital === hospital.name
             );
             return (
-              <>
-                <div
-                  key={index}
-                  className='bg-gradient-to-r from-primary-blue/[.1] to-primary-blue/[1] shadow'
-                >
-                  <img
-                    src={hospital.pictureSrc}
-                    alt={hospital.name}
-                    className='w-full h-32 object-contain mb-4 bg-white'
-                  />
-                  <h2 className=' to-yellow-500 text-sm font-semibold p-2 text-white drop-shadow-xl'>
-                    {hospital.name}
-                  </h2>
-                  {hospitalUsers.length > 0 ? (
-                    <ol className='list-decimal pl-4'>
-                      {hospitalUsers.map((user, idx) => (
-                        <li
-                          key={idx}
-                          className='ml-2 text-white drop-shadow-2xl'
-                        >
-                          <div className='flex items-center'>
-                            <span>{user.nickName}</span>
-                            <span
-                              className='cursor-pointer ml-auto text-red-500 pr-2'
-                              onClick={() => handleDeleteClick(user)}
-                            >
-                              x
-                            </span>
-                          </div>
-                        </li>
-                      ))}
-                    </ol>
-                  ) : (
-                    <p className='text-white p-2'>No members yet.</p>
-                  )}
-                </div>
-              </>
+              <div
+                key={index}
+                className='bg-gradient-to-r from-primary-green/[.1] to-primary-green/[1] shadow'
+              >
+                <img
+                  src={hospital.pictureSrc}
+                  alt={hospital.name}
+                  className='w-full h-32 object-contain mb-4 bg-white'
+                />
+                <h2 className='to-yellow-500 text-sm font-semibold p-2 text-white drop-shadow-xl'>
+                  {hospital.name}
+                </h2>
+                {hospitalUsers.length > 0 ? (
+                  <ol className='list-decimal pl-4'>
+                    {hospitalUsers.map((user, idx) => (
+                      <li key={idx} className='ml-2 text-white drop-shadow-2xl'>
+                        <div className='flex items-center'>
+                          <span>{user.nickName}</span>
+                          <span
+                            className='cursor-pointer ml-auto text-red-500 pr-2'
+                            onClick={() => handleDeleteClick(user)}
+                          >
+                            x
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p className='text-white p-2'>No members yet.</p>
+                )}
+              </div>
             );
           })}
         </div>
-        <div className='grid grid-cols-5 gap-40 p-16 justify-center items-center'>
+        <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-8 md:gap-20 p-4 sm:p-8 md:p-16 justify-center items-center'>
           {hospitals.slice(6).map((hospital, index) => {
             const hospitalUsers = users.filter(
               (user) => user.hospital === hospital.name
             );
             return (
-              <>
-                <div
-                  key={index}
-                  className='bg-gradient-to-r from-primary-blue/[.1] to-primary-blue/[1] shadow'
-                >
-                  <img
-                    src={hospital.pictureSrc}
-                    alt={hospital.name}
-                    className='w-full h-32 object-contain mb-4 bg-white'
-                  />
-                  <h2 className=' to-yellow-500 text-sm font-semibold p-2 text-white drop-shadow-xl'>
-                    {hospital.name}
-                  </h2>
-                  {hospitalUsers.length > 0 ? (
-                    <ol className='list-decimal pl-4'>
-                      {hospitalUsers.map((user, idx) => (
-                        <li
-                          key={idx}
-                          className='ml-2 text-white drop-shadow-2xl'
-                        >
-                          <div className='flex items-center'>
-                            <span>{user.nickName}</span>
-                            <span
-                              className='cursor-pointer ml-auto text-red-500 pr-2'
-                              onClick={() => handleDeleteClick(user)}
-                            >
-                              x
-                            </span>
-                          </div>
-                        </li>
-                      ))}
-                    </ol>
-                  ) : (
-                    <p className='text-white p-2'>No members yet.</p>
-                  )}
-                </div>
-              </>
+              <div
+                key={index}
+                className='bg-gradient-to-r from-primary-green/[.1] to-primary-green/[1] shadow'
+              >
+                <img
+                  src={hospital.pictureSrc}
+                  alt={hospital.name}
+                  className='w-full h-32 object-contain mb-4 bg-white'
+                />
+                <h2 className='to-yellow-500 text-sm font-semibold p-2 text-white drop-shadow-xl'>
+                  {hospital.name}
+                </h2>
+                {hospitalUsers.length > 0 ? (
+                  <ol className='list-decimal pl-4'>
+                    {hospitalUsers.map((user, idx) => (
+                      <li key={idx} className='ml-2 text-white drop-shadow-2xl'>
+                        <div className='flex items-center'>
+                          <span>{user.nickName}</span>
+                          <span
+                            className='cursor-pointer ml-auto text-red-500 pr-2'
+                            onClick={() => handleDeleteClick(user)}
+                          >
+                            x
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p className='text-white p-2'>No members yet.</p>
+                )}
+              </div>
             );
           })}
         </div>

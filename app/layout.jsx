@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 
 import Nav from '@/components/Nav';
 import { Toaster } from 'react-hot-toast';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'IM-AZING',
@@ -17,6 +18,7 @@ const RootLayout = ({ children }) => {
           <main className='app'>
             <Nav />
             {children}
+            <Footer />
           </main>
         </>
       </body>

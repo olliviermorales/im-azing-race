@@ -4,6 +4,8 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+
+    './node_modules/flowbite-react/**/*.js',
   ],
   theme: {
     extend: {
@@ -12,9 +14,10 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       colors: {
-        'primary-blue': '#184499',
+        'primary-green': '#007273',
+        'primary-yellow': '#CEDF29',
       },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };
