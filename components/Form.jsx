@@ -66,7 +66,7 @@ const Form = () => {
     <section
       className='pt-16 lg:pt-6 first-letter:xl:pt-24 bg-primary-green max-w-full my-auto w-full flex'
       style={{
-        backgroundImage: "url('/assets/images/bg.png')",
+        backgroundImage: "url('/assets/images/BG.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
