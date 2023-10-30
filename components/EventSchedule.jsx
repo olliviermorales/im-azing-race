@@ -53,7 +53,7 @@ const scheduleItems = [
   {
     time: '',
     programme: 'Closing Remarks',
-    speakers: ['Dr. Robert Borja'],
+    speakers: ['Dr. Robert Barja'],
   },
 ];
 
@@ -79,7 +79,7 @@ const EventSchedule = () => {
         </p>
       </div>
       <div className='px-2 sm:px-8 lg:px-12 w-full mt-8'>
-        <div className='grid grid-cols-1 sm:grid-cols-3 gap-2 border-t-4 border-t-white font-semibold py-5 border-b-4 border-b-primary-yellow text-white'>
+        <div className='grid grid-cols-1 sm:grid-cols-3 gap-2 border-t-4 border-t-white font-semibold py-5 border-b-4 border-b-white text-white'>
           <div className='px-2 text-lg font-bold'>TIME</div>
           <div className='px-2 text-lg font-bold'>PROGRAMME</div>
           <div className='px-2 text-lg font-bold'>SPEAKERS</div>

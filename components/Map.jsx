@@ -18,20 +18,20 @@ const Map = () => {
 
       {/* Text Content Column */}
       <div className='mt-8 md:mt-0 mx-auto px-4 md:px-6 lg:px-24 w-full md:w-1/2 flex flex-col space-y-4 md:space-y-6'>
-        <p className='uppercase md:text-6xl lg:text-6xl xl:text-8xl 2xl:text-9xl text-4xl tracking-widest font-black text-primary-yellow text-center bg-primary-green'>
+        <p className='uppercase md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-4xl tracking-widest font-black text-primary-yellow text-center bg-primary-green'>
           THE
         </p>
 
         <div className='flex justify-center items-center space-x-2'>
-          <p className='uppercase md:text-6xl lg:text-6xl xl:text-8xl 2xl:text-9xl text-4xl font-black text-transparent bg-clip-text bg-gradient-to-b from-primary-green to-black'>
+          <p className='uppercase md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-4xl font-black text-transparent bg-clip-text bg-gradient-to-b from-primary-green to-black'>
             IM
           </p>
-          <p className='uppercase md:text-6xl lg:text-6xl xl:text-8xl 2xl:text-9xl text-4xl font-black text-primary-green'>
+          <p className='uppercase md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-4xl font-black text-primary-green'>
             -AZING
           </p>
         </div>
 
-        <p className='uppercase md:text-6xl lg:text-6xl xl:text-8xl 2xl:text-9xl text-4xl text-center font-black text-primary-green'>
+        <p className='uppercase md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-4xl text-center font-black text-primary-green'>
           RACE
         </p>
 
