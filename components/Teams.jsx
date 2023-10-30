@@ -39,13 +39,13 @@ const Teams = () => {
           toast.success(`${selectedUser.nickName} successfully removed!`, {
             duration: 4000,
             style: {
-              backgroundColor: '#00FF00',
-              color: '#184499',
+              backgroundColor: '#CEDF29',
+              color: '#007273',
             },
             position: 'top-right',
             iconTheme: {
-              primary: '#184499',
-              secondary: '#FFCD00',
+              primary: '#CEDF29',
+              secondary: '#007273',
             },
           });
         } else {

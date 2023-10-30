@@ -1,9 +1,9 @@
 'use client';
-import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Input from 'react-phone-number-input/input';
 import { hospitals } from '@/helpers/helper';
+import toast from 'react-hot-toast';
 
 const initForm = {
   nickName: '',
@@ -36,6 +36,18 @@ const Form = () => {
         }),
       });
       if (response.ok) {
+        toast.success(`Congratulations! Welcome to the IM-AZING race!`, {
+          duration: 4000,
+          style: {
+            backgroundColor: '#CEDF29',
+            color: '#007273',
+          },
+          position: 'top-right',
+          iconTheme: {
+            primary: '#CEDF29',
+            secondary: '#007273',
+          },
+        });
         router.push('/thank-you');
       }
     } catch (error) {
