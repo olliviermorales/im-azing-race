@@ -35,7 +35,7 @@ const Map = () => {
           RACE
         </p>
 
-        <p className='md:text-2xl lg:text-2xl xl:text-3xl  text-xl font-bold text-yellow-200 text-center bg-primary-green p-3'>
+        <p className='md:text-2xl lg:text-2xl xl:text-3xl  text-xl font-bold text-primary-yellow text-center bg-primary-green p-3'>
           Philippine College of Physicians <br /> Quezon City Chapter
         </p>
 
