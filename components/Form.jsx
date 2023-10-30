@@ -64,6 +64,7 @@ const Form = () => {
 
   return (
     <section
+      id='form'
       className='pt-16 lg:pt-6 first-letter:xl:pt-24 bg-primary-green max-w-full my-auto w-full flex'
       style={{
         backgroundImage: "url('/assets/images/background-form.png')",
@@ -80,7 +81,7 @@ const Form = () => {
           onSubmit={handleSubmit}
           className='w-full max-w-2xl flex flex-col gap-6'
         >
-          <div id='form' className='flex gap-2 scroll-smooth'>
+          <div className='flex gap-2 scroll-smooth'>
             <div className='w-1/2'>
               <label>
                 <span className='font-inter font-semibold text-base text-white'>

@@ -76,7 +76,7 @@ const Map = () => {
         <div className='flex justify-center mt-4'>
           <Link
             href='#form'
-            className='text-xl md:text-xl lg:text-xl xl:text-4xl 2xl:text-4xl font-bold text-primary-yellow px-4 bg-primary-green py-3 rounded-full hover:bg-blue-500'
+            className='text-xl md:text-xl lg:text-xl xl:text-4xl 2xl:text-4xl font-bold text-primary-yellow px-4 bg-primary-green py-3 rounded-full hover:bg-green-500'
           >
             Register Here!
           </Link>
