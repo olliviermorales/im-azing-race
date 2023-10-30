@@ -18,7 +18,7 @@ const Map = () => {
 
       {/* Text Content Column */}
       <div className='mt-8 md:mt-0 mx-auto px-4 md:px-6 lg:px-24 w-full md:w-1/2 flex flex-col space-y-4 md:space-y-6'>
-        <p className='uppercase md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-4xl tracking-widest font-black text-primary-yellow text-center bg-primary-green'>
+        {/* <p className='uppercase md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-4xl tracking-widest font-black text-primary-yellow text-center bg-primary-green'>
           THE
         </p>
 
@@ -33,7 +33,14 @@ const Map = () => {
 
         <p className='uppercase md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-9xl text-4xl text-center font-black text-primary-green'>
           RACE
-        </p>
+        </p> */}
+        <Image
+          src={'/assets/images/green-race.png'}
+          alt='Map Image'
+          width={1000}
+          height={1000}
+          quality={100}
+        />
 
         <p className='md:text-2xl lg:text-2xl xl:text-3xl  text-xl font-bold text-primary-yellow text-center bg-primary-green p-3'>
           Philippine College of Physicians <br /> Quezon City Chapter
