@@ -9,11 +9,7 @@ export const metadata = {
   title: 'IM-AZING',
   description: 'Discover & Share AI Prompts',
   icons: {
-    icon: {
-      url: '/favicon.png',
-      type: 'image/png',
-    },
-    shortcut: { url: '/favicon.png', type: 'image/png' },
+    icon: '/favicon.png',
   },
 };
 

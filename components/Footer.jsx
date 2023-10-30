@@ -7,7 +7,8 @@ function Footer() {
         <div className='w-8 md:w-12 h-8 md:h-12 relative'>
           <Image
             src={'/assets/images/vmmc logo 1.png'}
-            layout='fill'
+            width={50}
+            height={50}
             className='object-contain'
             alt='Logo 1'
           />
@@ -15,7 +16,8 @@ function Footer() {
         <div className='w-8 md:w-12 h-8 md:h-12 relative'>
           <Image
             src={'/assets/images/vmmcim logo 1.png'}
-            layout='fill'
+            width={50}
+            height={50}
             className='object-contain'
             alt='Logo 2'
           />
@@ -23,7 +25,8 @@ function Footer() {
         <div className='w-8 md:w-12 h-8 md:h-12 relative'>
           <Image
             src={'/assets/images/image 3.png'}
-            layout='fill'
+            width={50}
+            height={50}
             className='object-contain'
             alt='Logo 3'
           />
