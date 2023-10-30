@@ -25,7 +25,7 @@ const Salamat = () => {
               height={25}
             />
             <p className='text-xl sm:text-2xl font-bold text-primary-green'>
-              November 11, 2023 at 8:30 AM
+              November 25, 2023 at 7:30 AM
             </p>
           </div>
           <div className='flex items-center space-x-3'>
