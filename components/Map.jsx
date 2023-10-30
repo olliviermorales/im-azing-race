@@ -10,8 +10,8 @@ const Map = () => {
         <Image
           src={'/assets/images/map.png'}
           alt='Map Image'
-          width={500}
-          height={500}
+          width={750}
+          height={750}
           quality={100}
         />
       </div>
@@ -37,18 +37,18 @@ const Map = () => {
         <Image
           src={'/assets/images/green-race.png'}
           alt='Map Image'
-          width={1000}
-          height={1000}
+          width={2500}
+          height={2500}
           quality={100}
         />
 
-        <p className='md:text-2xl lg:text-2xl xl:text-3xl  text-xl font-bold text-primary-yellow text-center bg-primary-green p-3'>
+        {/* <p className='md:text-2xl lg:text-2xl xl:text-3xl  text-xl font-bold text-primary-yellow text-center bg-primary-green p-3'>
           Philippine College of Physicians <br /> Quezon City Chapter
         </p>
 
         <p className='md:text-2xl lg:text-3xl text-xl font-bold text-center text-primary-green'>
           An Interhospital Activity
-        </p>
+        </p> */}
 
         <div className='border border-primary-green px-4 md:px-8 lg:px-12 py-2 lg:py-4 space-y-2'>
           <div className='flex items-center space-x-2'>

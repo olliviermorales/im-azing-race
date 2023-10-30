@@ -38,11 +38,6 @@ const Nav = () => {
           </p>
         </div>
       </Link>
-      <div className='hidden md:block w-full mt-2 md:mt-0 md:w-auto'>
-        <p className='lg:text-3xl xl:text-5xl 2xl:text-7xl md:text-2xl text-white font-black uppercase'>
-          THE IM-AZING RACE
-        </p>
-      </div>
     </nav>
   );
 };

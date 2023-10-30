@@ -19,13 +19,10 @@ const scheduleItems = [
   },
   {
     time: '8:30 AM - 9:30 AM',
-    programme: 'Introduction of speaker: host',
-    speakers: [],
-  },
-  {
-    time: '',
-    programme: 'Green Program Lecture',
+    programme: 'Introduction of speaker',
+    programme2: 'Green Program Lecture',
     speakers: [
+      'Host',
       'Paula Teresa F. Sta. Maria, MD, FPCP',
       'Jonathan Moses Jadloc, MD, FPCP',
     ],
@@ -33,27 +30,25 @@ const scheduleItems = [
   {
     time: '9:30 AM - 10:00 AM',
     programme: 'Reading of Mechanics',
-    speakers: ['Dr. Lance Alabarca'],
-  },
-  {
-    time: '',
-    programme: 'Introduction of Teams: host',
-    speakers: [],
-  },
-  {
-    time: '',
-    programme: 'Oath of sportsmanship',
-    speakers: ['Dr. Karina Mabanag', 'Dr. Rafael Rosales'],
+    programme2: 'Introduction of Teams',
+    programme3: 'Oath of sportsmanship',
+    speakers: [
+      'Dr. Lance Alabarca',
+      'Host',
+      'Dr. Karina Mabanag',
+      'Dr. Rafael Rosales',
+    ],
   },
   {
     time: '10:00 AM - 12:00 PM',
-    programme: 'Awarding of Winners',
-    speakers: ['Awards Committee'],
+    programme: 'IM-AZING RACE PROPER',
+    speakers: [],
   },
   {
-    time: '',
-    programme: 'Closing Remarks',
-    speakers: ['Dr. Robert Barja'],
+    time: '12:00 PM - onwards',
+    programme: 'Awarding of Winners',
+    programme2: 'Closing Remarks',
+    speakers: ['Awards Committee', 'Dr. Robert Barja'],
   },
 ];
 
@@ -89,6 +84,8 @@ const EventSchedule = () => {
             key={index}
             time={item.time}
             programme={item.programme}
+            programme2={item.programme2}
+            programme3={item.programme3}
             speakers={item.speakers}
           />
         ))}
