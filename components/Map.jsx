@@ -67,6 +67,11 @@ const Map = () => {
             </p>
           </div>
         </div>
+        <div>
+          <p className='text-primary-green'>
+            *Deadline of Registration is on November 6, 2023.
+          </p>
+        </div>
 
         <div className='flex justify-center mt-4'>
           <Link
