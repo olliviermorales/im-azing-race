@@ -35,7 +35,7 @@ const Map = () => {
           RACE
         </p> */}
         <Image
-          src={'/assets/images/green-race.png'}
+          src={'/assets/images/green-race.svg'}
           alt='Map Image'
           width={2500}
           height={2500}
