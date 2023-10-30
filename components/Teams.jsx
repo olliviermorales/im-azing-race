@@ -87,7 +87,7 @@ const Teams = () => {
         </p>
       </div>
       <div className='bg-gradient-to-b from-primary-green/[.5] to-yellow-500/[.5] opacity-0.1 flex flex-col'>
-        <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-8 md:gap-20 pt-8 px-4 sm:px-8 md:px-16'>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-8 md:gap-20 pt-8 px-4 sm:px-8 md:px-16'>
           {hospitals.slice(0, 6).map((hospital, index) => {
             const hospitalUsers = users.filter(
               (user) => user.hospital === hospital.name
@@ -128,7 +128,7 @@ const Teams = () => {
             );
           })}
         </div>
-        <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-8 md:gap-20 p-4 sm:p-8 md:p-16 justify-center items-center'>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-8 md:gap-20 p-4 sm:p-8 md:p-16 justify-center items-center'>
           {hospitals.slice(6).map((hospital, index) => {
             const hospitalUsers = users.filter(
               (user) => user.hospital === hospital.name

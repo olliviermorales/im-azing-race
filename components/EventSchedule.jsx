@@ -4,36 +4,57 @@ import EventProgram from './EventProgram';
 const scheduleItems = [
   {
     time: '7:30 AM - 8:00 AM',
-    programme: 'Opening Ceremony',
-    speakers: 'John Doe',
+    programme: 'Registration',
+    speakers: [],
   },
   {
     time: '8:00 AM - 8:15 AM',
-    programme: 'Keynote Speech',
-    speakers: 'Jane Smith',
+    programme: 'Invocation and anthem',
+    speakers: [],
   },
   {
     time: '8:15 AM - 8:30 AM',
-    programme: 'Keynote Speech',
-    speakers: 'Jane Smith',
+    programme: 'Opening Remarks',
+    speakers: ['Dr. Eloisa De Guia'],
   },
   {
     time: '8:30 AM - 9:30 AM',
-    programme: 'Keynote Speech',
-    speakers: 'Jane Smith',
+    programme: 'Introduction of speaker: host',
+    speakers: [],
+  },
+  {
+    time: '',
+    programme: 'Green Program Lecture',
+    speakers: [
+      'Paula Teresa F. Sta. Maria, MD, FPCP',
+      'Jonathan Moses Jadloc, MD, FPCP',
+    ],
   },
   {
     time: '9:30 AM - 10:00 AM',
-    programme: 'Keynote Speech',
-    speakers: 'Jane Smith',
+    programme: 'Reading of Mechanics',
+    speakers: ['Dr. Lance Alabarca'],
   },
-  { time: '11:00 AM', programme: 'Keynote Speech', speakers: 'Jane Smith' },
-  { time: '11:00 AM', programme: 'Keynote Speech', speakers: 'Jane Smith' },
-  { time: '11:00 AM', programme: 'Keynote Speech', speakers: 'Jane Smith' },
-  { time: '11:00 AM', programme: 'Keynote Speech', speakers: 'Jane Smith' },
-  { time: '11:00 AM', programme: 'Keynote Speech', speakers: 'Jane Smith' },
-  { time: '11:00 AM', programme: 'Keynote Speech', speakers: 'Jane Smith' },
-  { time: '11:00 AM', programme: 'Keynote Speech', speakers: 'Jane Smith' },
+  {
+    time: '',
+    programme: 'Introduction of Teams: host',
+    speakers: [],
+  },
+  {
+    time: '',
+    programme: 'Oath of sportsmanship',
+    speakers: ['Dr. Karina Mabanag', 'Dr. Rafael Rosales'],
+  },
+  {
+    time: '10:00 AM - 12:00 PM',
+    programme: 'Awarding of Winners',
+    speakers: ['Awards Committee'],
+  },
+  {
+    time: '',
+    programme: 'Closing Remarks',
+    speakers: ['Dr. Robert Borja'],
+  },
 ];
 
 const EventSchedule = () => {
@@ -59,9 +80,9 @@ const EventSchedule = () => {
       </div>
       <div className='px-2 sm:px-8 lg:px-12 w-full mt-8'>
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-2 border-t-4 border-t-white font-semibold py-5 border-b-4 border-b-primary-yellow text-white'>
-          <div className='px-2'>TIME</div>
-          <div className='px-2'>PROGRAMME</div>
-          <div className='px-2'>SPEAKERS</div>
+          <div className='px-2 text-lg font-bold'>TIME</div>
+          <div className='px-2 text-lg font-bold'>PROGRAMME</div>
+          <div className='px-2 text-lg font-bold'>SPEAKERS</div>
         </div>
         {scheduleItems.map((item, index) => (
           <EventProgram
@@ -71,6 +92,14 @@ const EventSchedule = () => {
             speakers={item.speakers}
           />
         ))}
+      </div>
+      <div>
+        <p className='text-primary-yellow text-2xl font-black tracking-wide'>
+          RESTORING HEALTH,
+        </p>
+        <p className='text-primary-yellow text-2xl font-black tracking-wide'>
+          RESTORING EARTH
+        </p>
       </div>
     </section>
   );

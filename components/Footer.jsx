@@ -8,7 +8,7 @@ function Footer() {
           <Image
             src={'/assets/images/vmmc logo 1.png'}
             layout='fill'
-            objectFit='contain'
+            className='object-contain'
             alt='Logo 1'
           />
         </div>
@@ -16,7 +16,7 @@ function Footer() {
           <Image
             src={'/assets/images/vmmcim logo 1.png'}
             layout='fill'
-            objectFit='contain'
+            className='object-contain'
             alt='Logo 2'
           />
         </div>
@@ -24,7 +24,7 @@ function Footer() {
           <Image
             src={'/assets/images/image 3.png'}
             layout='fill'
-            objectFit='contain'
+            className='object-contain'
             alt='Logo 3'
           />
         </div>

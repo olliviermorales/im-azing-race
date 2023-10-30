@@ -10,10 +10,8 @@ const Salamat = () => {
       <div className='px-4 sm:px-8 lg:px-16 pt-8 lg:pt-16 w-full'>
         <div className='bg-primary-green flex flex-col space-y-4 sm:space-y-6 px-4 sm:px-8 lg:px-12 py-8 lg:py-12'>
           <p className='text-4xl sm:text-5xl lg:text-6xl text-center font-bold w-full text-primary-yellow'>
-            Thank you for registering
-          </p>
-          <p className='text-4xl sm:text-5xl lg:text-6xl text-center font-bold w-full text-primary-yellow'>
-            for the IM-AZING RACE interhospital activity!
+            Thank you for registering for the IM-AZING RACE interhospital
+            activity!
           </p>
         </div>
       </div>
@@ -59,12 +57,13 @@ const Salamat = () => {
             </button>
           </div>
         </div>
-        <div className='mt-6 lg:mt-0 w-full lg:w-1/2'>
+        <div className='mt-6 lg:mt-0 w-full lg:w-1/2 '>
           <Image
             src={'/assets/images/vmmc-svg.svg'}
             alt='VMMC Image'
             width={2000}
             height={2000}
+            className='lg:h-full lg:mt-[120px] xl:mt-[45px] 2xl:mt-[1px]'
           />
         </div>
       </div>

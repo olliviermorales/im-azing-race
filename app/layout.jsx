@@ -3,10 +3,18 @@ import '@/styles/globals.css';
 import Nav from '@/components/Nav';
 import { Toaster } from 'react-hot-toast';
 import Footer from '@/components/Footer';
+import Head from 'next/head';
 
 export const metadata = {
   title: 'IM-AZING',
   description: 'Discover & Share AI Prompts',
+  icons: {
+    icon: {
+      url: '/favicon.png',
+      type: 'image/png',
+    },
+    shortcut: { url: '/favicon.png', type: 'image/png' },
+  },
 };
 
 const RootLayout = ({ children }) => {

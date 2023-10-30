@@ -27,10 +27,10 @@ const Nav = () => {
           className='object-contain mx-2 md:mx-5'
         />
         <div className='flex flex-col ml-2'>
-          <p className='hidden md:block text-white drop-shadow-2xl'>
+          <p className='hidden lg:block lg:text-sm xl:text-base 2xl:text-lg text-white drop-shadow-2xl'>
             Veterans Memorial Medical Center
           </p>
-          <p className='hidden md:block text-white drop-shadow-2xl'>
+          <p className='hidden lg:block lg:text-sm xl:text-base 2xl:text-lg text-white drop-shadow-2xl'>
             Department of Internal Medicine
           </p>
           <p className='text-xl md:hidden text-white font-bold uppercase'>
@@ -39,7 +39,7 @@ const Nav = () => {
         </div>
       </Link>
       <div className='hidden md:block w-full mt-2 md:mt-0 md:w-auto'>
-        <p className='lg:text-7xl md:text-5xl text-white font-black uppercase'>
+        <p className='lg:text-3xl xl:text-5xl 2xl:text-7xl md:text-2xl text-white font-black uppercase'>
           THE IM-AZING RACE
         </p>
       </div>

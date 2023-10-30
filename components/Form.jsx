@@ -64,7 +64,7 @@ const Form = () => {
 
   return (
     <section
-      className='pt-16 lg:pt-24 bg-primary-green max-w-full my-auto w-full flex'
+      className='pt-16 lg:pt-6 first-letter:xl:pt-24 bg-primary-green max-w-full my-auto w-full flex'
       style={{
         backgroundImage: "url('/assets/images/bg.png')",
         backgroundSize: 'cover',
@@ -72,7 +72,7 @@ const Form = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className='lg:w-1/2 px-4 lg:py-48 lg:px-32 space-y-12'>
+      <div className='lg:w-1/2 lg:py-20 lg:px-6 xl:w-1/2 px-4 xl:py-48 xl:px-32 space-y-12'>
         <p className=' uppercase text-start w-full text-white text-5xl font-bold tracking-widest'>
           Let's Race!
         </p>
