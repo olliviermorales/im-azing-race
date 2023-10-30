@@ -36,7 +36,7 @@ const Form = () => {
         }),
       });
       if (response.ok) {
-        toast.success(`Congratulations! Welcome to the IM-AZING race!`, {
+        toast.success(`CONGRATULATIONS! LET'S RACE!`, {
           duration: 4000,
           style: {
             backgroundColor: '#CEDF29',
