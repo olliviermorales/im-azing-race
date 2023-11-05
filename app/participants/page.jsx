@@ -33,7 +33,6 @@ const Participants = () => {
     }
     setLoading(false);
   };
-  console.log(users, 'users');
   if (showModal) {
     return (
       <div className='font-inter bg-gradient-to-b from-primary-yellow to-white w-full max-w-full flex min-h-screen flex-col mt-16 '>

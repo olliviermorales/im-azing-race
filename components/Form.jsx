@@ -27,7 +27,6 @@ const Form = () => {
   const [submitting, setSubmitting] = useState(false);
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
-  console.log(form, 'form');
   async function handleCaptchaSubmission(token) {
     // Server function to verify captcha
     await verifyCaptcha(token)
