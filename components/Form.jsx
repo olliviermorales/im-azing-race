@@ -1,9 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Input from 'react-phone-number-input/input';
 import { hospitals } from '@/helpers/helper';
 import toast from 'react-hot-toast';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { verifyCaptcha } from '@/utils/ServerActions';
+import { validateEmail } from '@/helpers/helper';
 
 const initForm = {
   nickName: '',
@@ -12,13 +15,25 @@ const initForm = {
   hospital: '',
   yearLevel: '',
   isContactable: false,
+  email: '',
+  role: '',
 };
 
 const Form = () => {
   const router = useRouter();
   const [form, setForm] = useState(initForm);
+  const [emailError, setEmailError] = useState('');
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const recaptchaRef = useRef(null);
+  const [isVerified, setIsverified] = useState(false);
+  console.log(form, 'form');
+  async function handleCaptchaSubmission(token) {
+    // Server function to verify captcha
+    await verifyCaptcha(token)
+      .then(() => setIsverified(true))
+      .catch(() => setIsverified(false));
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -33,8 +48,15 @@ const Form = () => {
           hospital: form.hospital,
           yearLevel: form.yearLevel,
           isContactable: form.isContactable,
+          email: form.email,
+          role: form.role,
         }),
       });
+      if (!validateEmail(form.email)) {
+        setEmailError('Please enter a valid email address.');
+        setSubmitting(false);
+        return;
+      }
       if (response.ok) {
         toast.success(`CONGRATULATIONS! LET'S RACE!`, {
           duration: 4000,
@@ -169,6 +191,57 @@ const Form = () => {
               type='text'
             />
           </label>
+          <label>
+            <span className='font-inter font-semibold text-base text-white'>
+              Email Address
+            </span>
+            <input
+              type='email'
+              value={form.email}
+              onChange={(e) => {
+                const email = e.target.value;
+                setForm({ ...form, email });
+                if (validateEmail(email) || email === '') {
+                  setEmailError('');
+                } else {
+                  setEmailError('Please enter a valid email address.');
+                }
+              }}
+              placeholder='Enter your email'
+              required
+              className='form_input'
+            />
+            {emailError && (
+              <span className='text-red-400 text-sm mt-2'>{emailError}</span>
+            )}
+          </label>
+
+          <div className='flex items-center gap-2'>
+            <label className='inline-flex items-center'>
+              <input
+                type='radio'
+                name='role'
+                value='Contestant'
+                checked={form.role === 'Contestant'}
+                onChange={(e) => setForm({ ...form, role: e.target.value })}
+                className='form-radio text-indigo-600'
+                required
+              />
+              <span className='ml-2 text-white'>Contestant</span>
+            </label>
+            <label className='inline-flex items-center'>
+              <input
+                type='radio'
+                name='role'
+                value='Attendee'
+                checked={form.role === 'Attendee'}
+                onChange={(e) => setForm({ ...form, role: e.target.value })}
+                className='form-radio text-green-500'
+                required
+              />
+              <span className='ml-2 text-white'>Attendee</span>
+            </label>
+          </div>
 
           <label>
             <span className='font-inter font-semibold text-base text-white'>
@@ -206,9 +279,14 @@ const Form = () => {
             </label>
           </div>
           <div className='w-full flex flex-col mb-5 gap-4'>
+            <ReCAPTCHA
+              sitekey='6LfuNPcoAAAAAM9utpVzX_SKSjeb1MhXoPn5VAyQ'
+              ref={recaptchaRef}
+              onChange={handleCaptchaSubmission}
+            />
             <button
               type='submit'
-              disabled={error}
+              disabled={error || !isVerified}
               className='py-3 text-lg font-bold tracking-wider bg-primary-yellow rounded-full text-primary-green'
             >
               {submitting ? 'Submitting...' : 'Submit'}

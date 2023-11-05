@@ -44,3 +44,9 @@ export const hospitals = [
     pictureSrc: '/assets/images/stlukes.png',
   },
 ];
+
+export const validateEmail = (email) => {
+  // This regex checks for the presence of at least one '@' and one '.'
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(email);
+};

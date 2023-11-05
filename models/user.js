@@ -25,6 +25,14 @@ const UserSchema = new Schema({
     type: Boolean,
     required: [true, 'IsContactable is required!'],
   },
+  role: {
+    type: String,
+    required: [true, 'role is required!'],
+  },
+  email: {
+    type: String,
+    required: [true, 'email is required!'],
+  },
 });
 
 const User = models.User || model('User', UserSchema);

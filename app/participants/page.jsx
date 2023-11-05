@@ -94,6 +94,12 @@ const Participants = () => {
               Year Level
             </th>
             <th className='px-4 py-2 border-b-2 border-gray-300 bg-gray-200 text-left text-sm leading-4 text-gray-500 tracking-wider'>
+              Email
+            </th>
+            <th className='px-4 py-2 border-b-2 border-gray-300 bg-gray-200 text-left text-sm leading-4 text-gray-500 tracking-wider'>
+              Role
+            </th>
+            <th className='px-4 py-2 border-b-2 border-gray-300 bg-gray-200 text-left text-sm leading-4 text-gray-500 tracking-wider'>
               Is Contactable
             </th>
           </tr>
@@ -109,6 +115,8 @@ const Participants = () => {
               <td className='px-4 py-2 border'>{user.nickName}</td>
               <td className='px-4 py-2 border'>{user.hospital}</td>
               <td className='px-4 py-2 border'>{user.yearLevel}</td>
+              <td className='px-4 py-2 border'>{user.email}</td>
+              <td className='px-4 py-2 border'>{user.role}</td>
               <td className='px-4 py-2 border'>
                 {user.isContactable ? 'Yes' : 'No'}
               </td>

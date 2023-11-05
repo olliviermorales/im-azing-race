@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 import { hospitals } from '@/helpers/helper';
 import DeleteModal from './DeleteModal';
 import toast from 'react-hot-toast';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 const Teams = () => {
   const [users, setUsers] = useState([]);
@@ -78,7 +82,7 @@ const Teams = () => {
 
   return (
     <section
-      className='min-h-screen bg-cover bg-no-repeat bg-center p-4 sm:p-8 md:p-16 flex flex-col'
+      className='bg-cover bg-no-repeat bg-center p-4 sm:p-8 md:p-16 flex flex-col h-full'
       style={{ backgroundImage: 'url("/assets/images/teams-green.png")' }}
     >
       <div className='justify-center w-full'>
@@ -86,89 +90,82 @@ const Teams = () => {
           meet the teams
         </p>
       </div>
-      <div className='bg-gradient-to-b from-primary-green/[.5] to-yellow-500/[.5] opacity-0.1 flex flex-col'>
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-8 md:gap-20 pt-8 px-4 sm:px-8 md:px-16'>
-          {hospitals.slice(0, 6).map((hospital, index) => {
+      <div className='flex bg-gradient-to-b from-primary-green/[.5] to-yellow-500/[.5] opacity-0.1'>
+        <Swiper
+          modules={[Autoplay, Navigation]}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          slidesPerView={1}
+          spaceBetween={10}
+          navigation={true} // if you want navigation buttons
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            // when window width is >= 1024px
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 40,
+            },
+          }}
+          className='mySwiper'
+        >
+          {hospitals.map((hospital, index) => {
             const hospitalUsers = users.filter(
               (user) => user.hospital === hospital.name
             );
             return (
-              <div
+              <SwiperSlide
                 key={index}
-                className='bg-gradient-to-r from-primary-green/[.1] to-primary-green/[1] shadow'
+                className='flex align-middle justify-center h-full'
               >
-                <img
-                  src={hospital.pictureSrc}
-                  alt={hospital.name}
-                  className='w-full h-32 object-contain mb-4 bg-white'
-                />
-                <h2 className='to-yellow-500 text-sm font-semibold p-2 text-white drop-shadow-xl'>
-                  {hospital.name}
-                </h2>
-                {hospitalUsers.length > 0 ? (
-                  <ol className='list-decimal pl-4'>
-                    {hospitalUsers.map((user, idx) => (
-                      <li key={idx} className='ml-2 text-white drop-shadow-2xl'>
-                        <div className='flex items-center'>
-                          <span>{user.nickName}</span>
-                          <span
-                            className='cursor-pointer ml-auto text-red-500 pr-2'
-                            onClick={() => handleDeleteClick(user)}
-                          >
-                            x
-                          </span>
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
-                ) : (
-                  <p className='text-white p-2'>No members yet.</p>
-                )}
-              </div>
+                <div className='bg-gradient-to-r from-primary-green/[.1] to-primary-green/[1] shadow h-full '>
+                  <img
+                    src={hospital.pictureSrc}
+                    alt={hospital.name}
+                    className='w-full h-64 object-contain mb-4 bg-white'
+                  />
+                  <h2 className='to-yellow-500 text-sm font-semibold p-2 text-white drop-shadow-xl'>
+                    {hospital.name}
+                  </h2>
+                  {hospitalUsers.length > 0 ? (
+                    <ol className='list-decimal pl-4'>
+                      {hospitalUsers.map((user, idx) => (
+                        <li
+                          key={idx}
+                          className='ml-2 text-white drop-shadow-2xl'
+                        >
+                          <div className='flex items-center'>
+                            <span>
+                              Dr. {user.nickName} - {user.role}
+                            </span>
+                            <span
+                              className='cursor-pointer ml-auto text-red-500 rounded-md text-center text-xs pr-2'
+                              onClick={() => handleDeleteClick(user)}
+                            >
+                              Remove
+                            </span>
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                  ) : (
+                    <p className='text-white p-2'>No members yet.</p>
+                  )}
+                </div>
+              </SwiperSlide>
             );
           })}
-        </div>
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-8 md:gap-20 p-4 sm:p-8 md:p-16 justify-center items-center'>
-          {hospitals.slice(6).map((hospital, index) => {
-            const hospitalUsers = users.filter(
-              (user) => user.hospital === hospital.name
-            );
-            return (
-              <div
-                key={index}
-                className='bg-gradient-to-r from-primary-green/[.1] to-primary-green/[1] shadow'
-              >
-                <img
-                  src={hospital.pictureSrc}
-                  alt={hospital.name}
-                  className='w-full h-32 object-contain mb-4 bg-white'
-                />
-                <h2 className='to-yellow-500 text-sm font-semibold p-2 text-white drop-shadow-xl'>
-                  {hospital.name}
-                </h2>
-                {hospitalUsers.length > 0 ? (
-                  <ol className='list-decimal pl-4'>
-                    {hospitalUsers.map((user, idx) => (
-                      <li key={idx} className='ml-2 text-white drop-shadow-2xl'>
-                        <div className='flex items-center'>
-                          <span>{user.nickName}</span>
-                          <span
-                            className='cursor-pointer ml-auto text-red-500 pr-2'
-                            onClick={() => handleDeleteClick(user)}
-                          >
-                            x
-                          </span>
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
-                ) : (
-                  <p className='text-white p-2'>No members yet.</p>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        </Swiper>
       </div>
       <DeleteModal
         showModal={showDeleteModal}

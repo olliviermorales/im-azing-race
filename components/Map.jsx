@@ -76,7 +76,7 @@ const Map = () => {
         </div>
         <div>
           <p className='text-primary-green'>
-            *Deadline of Registration is on November 6, 2023.
+            *Deadline of Registration is on November 8, 2023.
           </p>
         </div>
 

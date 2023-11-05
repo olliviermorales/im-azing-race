@@ -51,7 +51,7 @@ const Salamat = () => {
           <div className='flex flex-col justify-center text-center mt-8 lg:mt-16'>
             <button
               onClick={() => router.push('/')}
-              className='text-2xl lg:text-4xl font-bold text-white text-center px-6 bg-primary-green p-3 rounded-full hover:bg-blue-500 mt-6'
+              className='text-2xl lg:text-4xl font-bold text-white text-center px-6 bg-primary-green p-3 rounded-full hover:bg-green-500 mt-6'
             >
               Return to homepage
             </button>

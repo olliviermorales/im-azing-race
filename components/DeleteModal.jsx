@@ -18,7 +18,8 @@ const DeleteModal = ({
     showModal && (
       <div className='fixed inset-0 flex items-center justify-center z-50'>
         <div className='bg-white p-8 rounded shadow-lg'>
-          <h2 className='text-xl font-semibold mb-4'>Confirm Deletion</h2>
+          <h2 className='text-xl font-semibold'>Confirm Deletion</h2>
+          <p className='text-sm mb-4'>Please email admin at admin@vmmc.ph</p>
           <input
             type='password'
             placeholder='Enter your password'

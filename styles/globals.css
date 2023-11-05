@@ -70,7 +70,7 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col mx-auto ;
+  @apply relative z-10 flex justify-center items-center flex-col mx-auto;
 }
 
 .black_btn {
@@ -168,4 +168,13 @@
 
 .flex-between {
   @apply flex justify-between items-center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-primary-yellow;
+}
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  @apply fill-primary-yellow;
 }
