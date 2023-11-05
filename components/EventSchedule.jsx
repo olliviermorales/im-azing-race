@@ -15,16 +15,19 @@ const scheduleItems = [
   {
     time: '8:15 AM - 8:30 AM',
     programme: 'Opening Remarks',
-    speakers: ['Dr. Eloisa De Guia'],
+    speakers: ['Eloisa S. De Guia, MD, FPCP'],
   },
   {
     time: '8:30 AM - 9:30 AM',
     programme: 'Introduction of speaker',
-    programme2: 'Green Program Lecture',
+    programme2:
+      'GREEN EVENT 2023: S.W.E.E.P. (Sustainable Work towards Equitable Environment Protection)',
     speakers: [
       'Host',
-      'Paula Teresa F. Sta. Maria, MD, FPCP',
-      'Jonathan Moses Jadloc, MD, FPCP',
+      `Paula Teresa F. Sta. Maria, MD, FPCP
+      (Chair, Committee on Climate Change, Environment and Health)`,
+      `Jonathan Moses C. Jadloc, MD, FPCP
+(Committee on Climate Change, Environment and Health)`,
     ],
   },
   {
@@ -33,10 +36,10 @@ const scheduleItems = [
     programme2: 'Introduction of Teams',
     programme3: 'Oath of sportsmanship',
     speakers: [
-      'Dr. Lance Alabarca',
+      'Lance F. Alabarca, MD',
       'Host',
-      'Dr. Karina Mabanag',
-      'Dr. Rafael Rosales',
+      'Karina F. Mabanag, MD',
+      'Rafael Roi B. Rosales, MD',
     ],
   },
   {
@@ -48,7 +51,7 @@ const scheduleItems = [
     time: '12:00 PM - onwards',
     programme: 'Awarding of Winners',
     programme2: 'Closing Remarks',
-    speakers: ['Awards Committee', 'Dr. Robert Barja'],
+    speakers: ['Awards Committee', 'Robert A. Barja, MD, FPCP'],
   },
 ];
 
