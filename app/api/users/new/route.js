@@ -2,7 +2,6 @@ import { connectToDB } from '@/utils/database';
 import Users from '@/models/user';
 
 export const POST = async (req) => {
-  console.log(req, 'req');
   const {
     fullName,
     nickName,
