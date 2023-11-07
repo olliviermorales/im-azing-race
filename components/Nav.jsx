@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const Nav = () => {
   return (
-    <nav className='flex flex-wrap items-center justify-between w-full py-2 md:py-4 px-4 md:px-24 bg-primary-green fixed z-50 top-0 shadow-2xl '>
-      <Link href='/' className='flex gap-2 flex-center items-center'>
+    <nav className='flex flex-between items-center justify-between w-full py-2 md:py-4 px-4 md:px-24 bg-primary-green fixed z-50 top-0 shadow-2xl'>
+      <Link href='/' passHref className='flex gap-2 items-center'>
         <Image
           src={'/assets/images/vmmc logo 1.png'}
           alt='Logo 1'
@@ -33,10 +33,15 @@ const Nav = () => {
           <p className='hidden lg:block lg:text-sm xl:text-base 2xl:text-lg text-white drop-shadow-2xl'>
             Department of Internal Medicine
           </p>
-          <p className='text-xl md:hidden text-white font-bold uppercase'>
-            THE IM-AZING RACE
-          </p>
         </div>
+      </Link>
+      {/* "Meet The Teams" link for all devices */}
+      <Link
+        href='/thank-you#teams'
+        passHref
+        className='text-white px-4 py-2 hover:bg-white hover:text-primary-green transition-colors duration-300 uppercase'
+      >
+        Meet The Teams
       </Link>
     </nav>
   );

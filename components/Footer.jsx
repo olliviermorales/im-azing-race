@@ -41,7 +41,7 @@ function Footer() {
           Copyright © 2023. All rights reserved.
         </p>
       </div>
-      <div className='text-right'>
+      <div className='sm:text-center md:text-right'>
         <p className='text-xs md:text-sm'>North Avenue,</p>
         <p className='text-xs md:text-sm'>Diliman, Quezon City,</p>
         <p className='text-xs md:text-sm'>1110, Philippines</p>

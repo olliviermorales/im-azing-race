@@ -91,6 +91,7 @@ const Teams = () => {
 
   return (
     <section
+      id='teams'
       className='bg-cover bg-no-repeat bg-center p-4 sm:p-8 md:p-16 flex flex-col h-full'
       style={{ backgroundImage: 'url("/assets/images/teams-green.png")' }}
     >
@@ -154,7 +155,7 @@ const Teams = () => {
                           className='ml-2 text-white drop-shadow-2xl'
                         >
                           <div className='flex items-center'>
-                            <span>
+                            <span className='text-base md:text-xs lg:text-sm'>
                               Dr. {capitalizeFirstLetter(user.nickName)} -{' '}
                               {user.role}
                             </span>
@@ -177,6 +178,16 @@ const Teams = () => {
           })}
         </Swiper>
       </div>
+      <p className='text-left text-xs text-primary-yellow font-light mb-2 bg-primary-green'>
+        *For removal of entry please email{' '}
+        <a
+          href='mailto:admin@vmmc.ph'
+          target='_blank'
+          className='underline text-blue-600 hover:text-blue-800'
+        >
+          admin@vmmc.ph
+        </a>
+      </p>
       <DeleteModal
         showModal={showDeleteModal}
         setShowModal={setShowDeleteModal}
