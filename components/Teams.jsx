@@ -8,6 +8,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 
+//helper
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 const Teams = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -40,18 +44,23 @@ const Teams = () => {
           const updatedData = await updatedResponse.json();
           setUsers(updatedData);
           setShowDeleteModal(false);
-          toast.success(`${selectedUser.nickName} successfully removed!`, {
-            duration: 4000,
-            style: {
-              backgroundColor: '#CEDF29',
-              color: '#007273',
-            },
-            position: 'top-right',
-            iconTheme: {
-              primary: '#CEDF29',
-              secondary: '#007273',
-            },
-          });
+          toast.success(
+            `${capitalizeFirstLetter(
+              selectedUser.nickName
+            )} successfully removed!`,
+            {
+              duration: 4000,
+              style: {
+                backgroundColor: '#CEDF29',
+                color: '#007273',
+              },
+              position: 'top-right',
+              iconTheme: {
+                primary: '#CEDF29',
+                secondary: '#007273',
+              },
+            }
+          );
         } else {
           // Handle error cases (user not found, server error, etc.)
           console.error('Failed to delete user');
@@ -146,7 +155,8 @@ const Teams = () => {
                         >
                           <div className='flex items-center'>
                             <span>
-                              Dr. {user.nickName} - {user.role}
+                              Dr. {capitalizeFirstLetter(user.nickName)} -{' '}
+                              {user.role}
                             </span>
                             <span
                               className='cursor-pointer ml-auto text-red-500 rounded-md text-center text-xs pr-2'
