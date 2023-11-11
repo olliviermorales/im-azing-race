@@ -4,6 +4,7 @@ import Nav from '@/components/Nav';
 import { Toaster } from 'react-hot-toast';
 import Footer from '@/components/Footer';
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'IM-AZING',
@@ -23,6 +24,7 @@ const RootLayout = ({ children }) => {
             <Nav />
             {children}
             <Footer />
+            <Analytics />
           </main>
         </>
       </body>
