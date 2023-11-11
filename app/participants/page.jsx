@@ -60,7 +60,7 @@ const Participants = () => {
               </button>
               <button
                 className='px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400'
-                onClick={() => setShowModal(false)} // You might want to remove this if you don't want users to skip password entry
+                onClick={() => {}}
               >
                 Cancel
               </button>
