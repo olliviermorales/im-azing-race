@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 
-//helper
 const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
@@ -28,18 +27,15 @@ const Teams = () => {
     setLoading(true);
     try {
       if (password === 'Ko!91673') {
-        // Password is correct, proceed with user deletion
         const response = await fetch(`/api/users/${selectedUser._id}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${apiKey}`,
           },
-          // You can include additional headers or authentication tokens if required
         });
 
         if (response.ok) {
-          // User deleted successfully, close the modal, update UI, etc.
           const updatedResponse = await fetch(`/api/users/getAll`);
           const updatedData = await updatedResponse.json();
           setUsers(updatedData);
@@ -62,16 +58,13 @@ const Teams = () => {
             }
           );
         } else {
-          // Handle error cases (user not found, server error, etc.)
           console.error('Failed to delete user');
           toast.error('Failed to delete user');
         }
       } else {
-        // Incorrect password, set delete error message
         setDeleteError('Invalid password');
       }
     } catch (error) {
-      // Handle network errors or other exceptions
       console.error('Error deleting user', error);
       toast.error('Error deleting user');
     } finally {
@@ -109,19 +102,16 @@ const Teams = () => {
           }}
           slidesPerView={1}
           spaceBetween={10}
-          navigation={true} // if you want navigation buttons
+          navigation={true}
           breakpoints={{
-            // when window width is >= 640px
             640: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
-            // when window width is >= 768px
             768: {
               slidesPerView: 3,
               spaceBetween: 30,
             },
-            // when window width is >= 1024px
             1024: {
               slidesPerView: 5,
               spaceBetween: 40,

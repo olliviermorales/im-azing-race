@@ -28,7 +28,6 @@ const Form = () => {
   const recaptchaRef = useRef(null);
   const [isVerified, setIsverified] = useState(false);
   async function handleCaptchaSubmission(token) {
-    // Server function to verify captcha
     await verifyCaptcha(token)
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
@@ -91,7 +90,6 @@ const Form = () => {
   };
 
   const handleBlur = () => {
-    // Validate the contact number when the input field loses focus
     handleInputNumber(form.contactNumber);
   };
 
@@ -165,7 +163,7 @@ const Form = () => {
               international
               className='form_input'
               maxLength={16}
-              onBlur={handleBlur} // Validate the input when the field loses focus
+              onBlur={handleBlur}
             />
             {error && (
               <span className='text-red-400 text-sm mt-2'>{error}</span>
@@ -179,7 +177,6 @@ const Form = () => {
               pattern='^[0-9]{1,2}$'
               value={form.yearLevel}
               onChange={(e) => {
-                // Use regex to allow only numeric input with a maximum length of 2
                 const input = e.target.value.replace(/\D/g, '').slice(0, 2);
                 setForm({ ...form, yearLevel: input });
               }}
@@ -250,7 +247,7 @@ const Form = () => {
               onChange={(e) => setForm({ ...form, hospital: e.target.value })}
               required
               className='form_input'
-              value={form.hospital} // Add this line to control the selected value
+              value={form.hospital}
             >
               <option value='' hidden>
                 Choose a hospital

@@ -1,4 +1,3 @@
-// Import necessary modules
 import { connectToDB } from '@/utils/database';
 import Users from '@/models/user';
 

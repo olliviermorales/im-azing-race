@@ -9,19 +9,18 @@ const Sound = () => {
   useEffect(() => {
     if (typeof Audio !== 'undefined') {
       audio = new Audio(soundFile);
-      audio.loop = true; // Loop the audio
-      audio.muted = isSoundMuted; // Set initial muted status
+      audio.loop = true;
+      audio.muted = isSoundMuted;
       audio.play();
     }
 
-    // Clean up the audio element when the component unmounts
     return () => {
       if (audio) {
         audio.pause();
         audio.currentTime = 0;
       }
     };
-  }, [isSoundMuted]); // Re-run effect when isSoundMuted changes
+  }, [isSoundMuted]);
 
   const handleToggleSound = () => {
     setIsSoundMuted(!isSoundMuted);
