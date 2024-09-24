@@ -9,7 +9,7 @@ const Participants = () => {
   const [passwordError, setPasswordError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const CORRECT_PASSWORD = 'Ko!91673'; // This should be verified on server-side ideally
+  const CORRECT_PASSWORD = 'Abcd!234';
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -29,7 +29,7 @@ const Participants = () => {
       setPasswordError(null);
     } else {
       setPasswordError('Incorrect password');
-      setPassword(''); // clear password field
+      setPassword('');
     }
     setLoading(false);
   };

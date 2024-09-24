@@ -5,16 +5,14 @@ export const GET = async (req) => {
   try {
     await connectToDB();
 
-    // Fetch the timestamp of the last modified user
     const lastModifiedUser = await Users.findOne()
       .sort({ updatedAt: -1 })
       .select('updatedAt');
     const lastModifiedTimestamp = lastModifiedUser?.updatedAt;
 
-    // If there's an If-Modified-Since header, compare the dates
     const clientTimestamp = new Date(req.headers.get('If-Modified-Since'));
     if (lastModifiedTimestamp && clientTimestamp >= lastModifiedTimestamp) {
-      return new Response(null, { status: 304 }); // No need to send data, just the status
+      return new Response(null, { status: 304 });
     }
 
     const users = await Users.find();
